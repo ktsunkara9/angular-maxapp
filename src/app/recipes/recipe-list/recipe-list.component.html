@@ -1,2 +1,82 @@
-<p>recipe-list works!</p>
+<div class="row">
+    <div class="col-md-12">
+        <button class="btn btn-success">New Recipe</button>
+    </div>
+</div>
+
+<hr>
+
+<div class="row" *ngFor="let recipe of recipes">
+    <div class="col-md-12">
+        <a href="#" class="list-group-item clearfix" >
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="row">  <h4 class="list-group-item-heading"> {{recipe.name}}</h4> </div>
+                    <div class="row">  <p class="">{{recipe.description}}</p> </div>
+                    <div class="row">  <button class="btn btn-primary">Add to Cart</button> </div>
+                </div>
+                <div class="col-md-8">
+                    <span>
+                        <img 
+                        [src]="recipe.imagePath" 
+                        height="150px"
+                        width="250px"
+                        class="rounded mx-auto d-block">
+                    </span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+
+<!-- <div *ngFor="let recipe of recipes; let i = index">
+    <div class="row" *ngIf="i%2 == 0">
+        <div class="col-md-6">
+            <a href="#" class="list-group-item clearfix" >
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">  <h4 class="list-group-item-heading"> {{recipe.name}}</h4> </div>
+                        <div class="row">  <p class="">{{recipe.description}}</p> </div>
+                        <div class="row">  <button class="btn btn-primary">Add to Cart</button> </div>
+                    </div>
+                    <div class="col-md-8">
+                        <span>
+                            <img 
+                            [src]="recipe.imagePath" 
+                            height="150px"
+                            width="250px"
+                            class="rounded mx-auto d-block">
+                        </span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-6" *ngIf="!(i+1 == recipes.length)">
+            <a href="#" class="list-group-item clearfix" >
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">  <h4 class="list-group-item-heading"> {{recipes[i+1].name}}</h4> </div>
+                        <div class="row">  <p class="">{{recipes[i+1].description}}</p> </div>
+                        <div class="row">  <button class="btn btn-primary">Add to Cart</button> </div>
+                    </div>
+                    <div class="col-md-8">
+                        <span>
+                            <img 
+                            [src]="recipes[i+1].imagePath" 
+                            height="150px"
+                            width="250px"
+                            class="rounded mx-auto d-block">
+                        </span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
+ -->
+
 <app-recipe-item></app-recipe-item>
