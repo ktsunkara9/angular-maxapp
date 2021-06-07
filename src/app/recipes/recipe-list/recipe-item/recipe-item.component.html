@@ -1,1 +1,18 @@
-<p>recipe-item works!</p>
+<a href="#" class="list-group-item clearfix" (click)="onSelected()">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">  <h4 class="list-group-item-heading"> {{recipe.name}}</h4> </div>
+            <div class="row">  <p class="">{{recipe.description}}</p> </div>
+            <div class="row">  <button class="btn btn-primary">Add to Cart</button> </div>
+        </div>
+        <div class="col-md-8">
+            <span>
+                <img 
+                [src]="recipe.imagePath" 
+                height="150px"
+                width="250px"
+                class="rounded mx-auto d-block">
+            </span>
+        </div>
+    </div>
+</a>
